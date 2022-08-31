@@ -32,7 +32,7 @@ public:
         while (i > 0)
         {
             tot += ft[i];
-            i &= i - 1;
+            i -= i & -i;
         }
         return tot;
     }
