@@ -17,7 +17,6 @@ public:
         int n = this->v.size();
         int height = (int)ceil(log2(n));
         int size = (1 << (height + 1)) - 1;
-        cout << size << endl;
         vector<int> st(size, 0);
         this->st = st;
         build(0, n - 1, 0);
