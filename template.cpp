@@ -15,15 +15,13 @@ ostream &operator<<(ostream &os, const T_container &v)
 }
 
 #define ll long long
-#define ld long double
-#define pb push_back
-#define ppb pop_back
 #define fi first
 #define se second
 
 #define len(x) (int)(x).size()
 
 typedef vector<int> vi;
+typedef vector<vi> vii;
 typedef pair<int, int> pii;
 
 const ll MOD = 1e9 + 7;
@@ -46,7 +44,7 @@ int main(int argc, char *argv[])
     cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
-        cout << "Case #" << t << "\n";
+        // cout << "Case #" << t << "\n";
         solve();
     }
 }
