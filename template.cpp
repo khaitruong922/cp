@@ -26,9 +26,6 @@ typedef pair<int, int> pii;
 
 const ll MOD = 1e9 + 7;
 
-const int MAX_N = 2e5 + 5;
-ll a[MAX_N];
-
 void solve()
 {
 }
