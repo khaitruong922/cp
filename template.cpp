@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 template <typename A, typename B>
@@ -13,7 +12,7 @@ ostream &operator<<(ostream &os, const T_container &v)
     return os << "\n";
 }
 
-#define ll long long
+using ll = long long;
 
 void solve()
 {
