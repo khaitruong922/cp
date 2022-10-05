@@ -8,6 +8,7 @@ using namespace std;
 #endif
 
 using ll = long long;
+const int P = 1e9 + 7;
 
 void solve()
 {
