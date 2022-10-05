@@ -106,21 +106,18 @@ Z nck(int n, int k)
 
 int main()
 {
-    // Calculate factorial and inverse factorial from 1 to n
     f[0] = 1;
     for (int i = 1; i <= N; ++i)
     {
         f[i] = f[i - 1] * i;
     }
 
-    // Inverse factorial of k is 1 / k!
     invf[N] = f[N].inv();
     for (int i = N; i > 0; --i)
     {
         invf[i - 1] = invf[i] * i;
     }
 
-    // Example
     Z x = nck(6, 2);
     cout << x << "\n";
     Z y = nck(100, 12);
