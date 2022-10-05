@@ -1,9 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Copy from here
 using ll = long long;
-const int P = 998244353;
+const int P = 1e9 + 7;
 int norm(int x)
 {
     if (x < 0)
@@ -95,8 +94,7 @@ struct Z
     }
 };
 
-// How to fast calculate n choose k
-const int N = 100;
+const int N = 1e5 + 5;
 Z f[N], invf[N];
 
 Z nck(int n, int k)
