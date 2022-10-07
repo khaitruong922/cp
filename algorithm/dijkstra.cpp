@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef pair<int, int> pii;
+using pii = pair<int, int>;
 
-void dijkstra(int src, vector<vector<pii>> &graph)
+void dijkstra(int src, vector<vector<pii>> &g)
 {
     priority_queue<pii, vector<pii>, greater<pii>> pq;
-    int n = graph.size();
+    int n = g.size();
     vector<int> dist(n, INT_MAX);
     pq.push({0, src});
     dist[src] = 0;
@@ -14,7 +14,7 @@ void dijkstra(int src, vector<vector<pii>> &graph)
     {
         int u = pq.top().second;
         pq.pop();
-        for (auto &adj : graph[u])
+        for (auto &adj : g[u])
         {
             int v = adj.second;
             int w = adj.first;
@@ -34,25 +34,25 @@ void dijkstra(int src, vector<vector<pii>> &graph)
 int main()
 {
 
-    vector<vector<int>> matrix = {{0, 4, 0, 0, 0, 0, 0, 8, 0},
-                                  {4, 0, 8, 0, 0, 0, 0, 11, 0},
-                                  {0, 8, 0, 7, 0, 4, 0, 0, 2},
-                                  {0, 0, 7, 0, 9, 14, 0, 0, 0},
-                                  {0, 0, 0, 9, 0, 10, 0, 0, 0},
-                                  {0, 0, 4, 14, 10, 0, 2, 0, 0},
-                                  {0, 0, 0, 0, 0, 2, 0, 1, 6},
-                                  {8, 11, 0, 0, 0, 0, 1, 0, 7},
-                                  {0, 0, 2, 0, 0, 0, 6, 7, 0}};
-    int n = matrix.size();
-    vector<vector<pii>> graph(n);
+    vector<vector<int>> a = {{0, 4, 0, 0, 0, 0, 0, 8, 0},
+                             {4, 0, 8, 0, 0, 0, 0, 11, 0},
+                             {0, 8, 0, 7, 0, 4, 0, 0, 2},
+                             {0, 0, 7, 0, 9, 14, 0, 0, 0},
+                             {0, 0, 0, 9, 0, 10, 0, 0, 0},
+                             {0, 0, 4, 14, 10, 0, 2, 0, 0},
+                             {0, 0, 0, 0, 0, 2, 0, 1, 6},
+                             {8, 11, 0, 0, 0, 0, 1, 0, 7},
+                             {0, 0, 2, 0, 0, 0, 6, 7, 0}};
+    int n = a.size();
+    vector<vector<pii>> g(n);
     for (int i = 0; i < n; ++i)
     {
         for (int j = 0; j < n; ++j)
         {
-            if (matrix[i][j] == 0)
+            if (a[i][j] == 0)
                 continue;
-            graph[i].push_back({matrix[i][j], j});
+            g[i].push_back({a[i][j], j});
         }
     }
-    dijkstra(0, graph);
+    dijkstra(0, g);
 }
