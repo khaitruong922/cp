@@ -2,6 +2,8 @@
 using namespace std;
 using ll = long long;
 
+// Source: https://codeforces.com/blog/entry/107717
+
 ll lsqrt(ll x)
 {
     ll ans = 0;
