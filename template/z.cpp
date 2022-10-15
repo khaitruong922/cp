@@ -94,7 +94,7 @@ struct Z
     }
 };
 
-const int N = 1e5 + 5;
+const int N = 2e5 + 5;
 Z f[N], invf[N];
 
 Z nck(int n, int k)
@@ -120,4 +120,6 @@ int main()
     cout << x << "\n";
     Z y = nck(100, 12);
     cout << y << "\n";
+    Z z = nck(12345, 1234);
+    cout << z << "\n";
 }
