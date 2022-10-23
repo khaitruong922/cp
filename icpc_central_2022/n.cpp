@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 #ifdef LOCAL
@@ -8,12 +9,17 @@ using namespace std;
 #endif
 
 using ll = long long;
-using pii = pair<int, int>;
+using ld = long double;
 
 const int P = 1e9 + 7;
 
 void solve()
 {
+    ll n;
+    cin >> n;
+
+    ld sum = (ld)1.0 * (n + 0) / (n + 1);
+    cout << fixed << setprecision(10) << 1ll * (1ll - sum) * (ll)1e9 << "\n";
 }
 
 int main(int argc, char *argv[])

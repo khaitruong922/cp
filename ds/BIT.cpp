@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class FenwickTree
+class BIT
 {
 
 public:
     vector<int> a;
     vector<int> ft;
-    FenwickTree(vector<int> &a)
+    BIT(vector<int> &a)
     {
         this->a = a;
         buildTree();
@@ -78,24 +78,24 @@ public:
 int main()
 {
     vector<int> v = {7, 2, 3, 1, 5, 10, 3, 12, 18};
-    FenwickTree *ft = new FenwickTree(v);
-    ft->displayArray();
-    ft->displayTree();
-    cout << ft->prefixSum(2) << endl;
-    cout << ft->prefixSum(3) << endl;
-    cout << ft->prefixSum(5) << endl;
-    cout << ft->prefixSum(6) << endl;
-    cout << ft->rangeSum(2, 3) << endl;
-    cout << ft->rangeSum(1, 5) << endl;
-    cout << ft->rangeSum(4, 7) << endl;
-    ft->update(3, 100);
-    ft->displayArray();
-    ft->displayTree();
-    cout << ft->prefixSum(2) << endl;
-    cout << ft->prefixSum(3) << endl;
-    cout << ft->prefixSum(5) << endl;
-    cout << ft->prefixSum(6) << endl;
-    cout << ft->rangeSum(2, 3) << endl;
-    cout << ft->rangeSum(1, 5) << endl;
-    cout << ft->rangeSum(4, 7) << endl;
+    BIT *bit = new BIT(v);
+    bit->displayArray();
+    bit->displayTree();
+    cout << bit->prefixSum(2) << endl;
+    cout << bit->prefixSum(3) << endl;
+    cout << bit->prefixSum(5) << endl;
+    cout << bit->prefixSum(6) << endl;
+    cout << bit->rangeSum(2, 3) << endl;
+    cout << bit->rangeSum(1, 5) << endl;
+    cout << bit->rangeSum(4, 7) << endl;
+    bit->update(3, 100);
+    bit->displayArray();
+    bit->displayTree();
+    cout << bit->prefixSum(2) << endl;
+    cout << bit->prefixSum(3) << endl;
+    cout << bit->prefixSum(5) << endl;
+    cout << bit->prefixSum(6) << endl;
+    cout << bit->rangeSum(2, 3) << endl;
+    cout << bit->rangeSum(1, 5) << endl;
+    cout << bit->rangeSum(4, 7) << endl;
 }
