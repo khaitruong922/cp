@@ -31,6 +31,20 @@ ll power(ll a, ll b)
     return res;
 }
 
+ll powmod(ll a, ll b, ll p)
+{
+    ll res = 1;
+    a %= p;
+    while (b > 0)
+    {
+        if (b % 2)
+            res = (res * a) % p;
+        b >>= 1;
+        a = (a * a) % p;
+    }
+    return res;
+}
+
 int main()
 {
     cout << lsqrt(0) << endl;
@@ -46,4 +60,8 @@ int main()
     cout << "-----" << endl;
     cout << power(2, 4) << endl;
     cout << power(2, 0) << endl;
+    cout << "-----" << endl;
+    cout << powmod(2, 0, 1e9 + 7) << endl;
+    cout << powmod(2, 4, 1e9 + 7) << endl;
+    cout << powmod(2, 29, 1e9 + 7) << endl;
 }
