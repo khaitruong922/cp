@@ -45,6 +45,12 @@ ll powmod(ll a, ll b, ll p)
     return res;
 }
 
+// Assume that gcd(x,p) == 1
+ll modinv(ll x, ll p)
+{
+    return powmod(x, p - 2, p);
+}
+
 int main()
 {
     cout << lsqrt(0) << endl;
@@ -64,4 +70,8 @@ int main()
     cout << powmod(2, 0, 1e9 + 7) << endl;
     cout << powmod(2, 4, 1e9 + 7) << endl;
     cout << powmod(2, 29, 1e9 + 7) << endl;
+    cout << "----" << endl;
+    cout << modinv(1, 1e9 + 7) << endl;
+    cout << modinv(2, 1e9 + 7) << endl;
+    cout << modinv(3, 1e9 + 7) << endl;
 }
