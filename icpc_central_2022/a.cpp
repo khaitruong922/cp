@@ -14,7 +14,7 @@ using pii = pair<int, int>;
 const int P = 1e9 + 7;
 
 const int N = 301;
-int dp[N][N][N][2];
+int dp[N][N][N];
 
 int k;
 string s;
@@ -24,11 +24,11 @@ int dfs(int l, int r, int q, int t, bool qturn)
         return 1;
     if (q >= k)
         return 0;
-    if (dp[l][r][qturn ? q : t][qturn] != -1)
-        return dp[l][r][qturn ? q : t][qturn];
+    if (dp[l][r][qturn ? q : t] != -1)
+        return dp[l][r][qturn ? q : t];
     if (qturn)
-        return dp[l][r][q][qturn] = dfs(l + 1, r, q + (s[l] == 'B'), t, !qturn) || dfs(l, r - 1, q + (s[r] == 'B'), t, !qturn);
-    return dp[l][r][t][qturn] = dfs(l + 1, r, q, t + (s[l] == 'B'), !qturn) && dfs(l, r - 1, q, t + (s[r] == 'B'), !qturn);
+        return dp[l][r][q] = dfs(l + 1, r, q + (s[l] == 'B'), t, !qturn) || dfs(l, r - 1, q + (s[r] == 'B'), t, !qturn);
+    return dp[l][r][t] = dfs(l + 1, r, q, t + (s[l] == 'B'), !qturn) && dfs(l, r - 1, q, t + (s[r] == 'B'), !qturn);
 }
 
 void solve()
