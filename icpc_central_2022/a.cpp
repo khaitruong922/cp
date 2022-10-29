@@ -18,6 +18,7 @@ int dp[N][N][N];
 
 int k;
 string s;
+
 int dfs(int l, int r, int q, int t, bool qturn)
 {
     if (t >= k)
