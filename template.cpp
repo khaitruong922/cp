@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 #ifdef LOCAL
@@ -8,9 +9,6 @@ using namespace std;
 #endif
 
 using ll = long long;
-using pii = pair<int, int>;
-
-const int P = 1e9 + 7;
 
 void solve() {}
 
@@ -20,7 +18,5 @@ int main(int argc, char *argv[]) {
     cin.tie(nullptr);
     int tc = 1;
     cin >> tc;
-    while (tc--) {
-        solve();
-    }
+    while (tc--) solve();
 }
